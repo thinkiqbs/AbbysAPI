@@ -1,14 +1,15 @@
 {
-        "builds": [
-          {
-            "src": "abbysapi/wsgi.py",
-            "use": "@vercel/python"
-          }
-        ],
-        "routes": [
-          {
-            "src": "/(.*)",
-            "dest": "django_app_name/wsgi.py"
-          }
-        ]
-    }
+    "builds": [
+      {
+        "src": "abbysapi/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "abbysapi/wsgi.py"
+      }
+    ]
+  }
+  
