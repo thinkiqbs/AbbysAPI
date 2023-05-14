@@ -12,7 +12,7 @@ class QuestionSerializer(serializers.ModelSerializer):
     user = serializers.StringRelatedField()
     class Meta:
         model = Question
-        fields = ['id', 'user', 'question_text', 'created_at']
+        fields = ['id', 'user','title', 'question_text', 'created_at']
 
 class AnswerSerializer(serializers.ModelSerializer):
     user = serializers.StringRelatedField()

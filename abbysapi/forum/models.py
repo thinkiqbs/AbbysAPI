@@ -4,11 +4,13 @@ from accounts.models import MyUser
 
 class Question(models.Model):
     user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
+    title=models.CharField(max_length=255)
     question_text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
 class Answer(models.Model):
     user = models.ForeignKey(MyUser, on_delete=models.CASCADE)
+    # title = models.CharField(max_length=255)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     answer_text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
