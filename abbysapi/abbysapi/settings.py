@@ -208,7 +208,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-DEFAULT_FROM_EMAIL = "mambo@iqsacco.com"
+# DEFAULT_FROM_EMAIL = "mambo@iqsacco.com"
+
+DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_FROM')
+
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
