@@ -210,25 +210,20 @@ STATIC_URL = '/static/'
 
 DEFAULT_FROM_EMAIL = "mambo@iqsacco.com"
 
-# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-
-# EMAIL_FROM = os.environ.get('EMAIL_FROM') 
-# EMAIL_BCC = os.environ.get('EMAIL_BCC')
-
-# EMAIL_HOST = os.environ.get('EMAIL_HOST') 
-# EMAIL_PORT = os.environ.get('EMAIL_PORT') 
-# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') 
-# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-# EMAIL_USE_TLS = True
-# EMAIL_USE_SSL = False
-
-
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "nmbajah@gmail.com"
-EMAIL_HOST_PASSWORD = 'fwliangggleosuha'
-EMAIL_PORT = 587
+
+EMAIL_FROM = os.environ.get('EMAIL_FROM') 
+EMAIL_BCC = os.environ.get('EMAIL_BCC')
+
+EMAIL_HOST = os.environ.get('EMAIL_HOST') 
+EMAIL_PORT = os.environ.get('EMAIL_PORT') 
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') 
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+
+
 
 
 SITE_URL = 'http://localhost:8080/signup/verify/?code='
