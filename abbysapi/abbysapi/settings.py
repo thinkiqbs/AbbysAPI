@@ -121,7 +121,7 @@ CORS_ALLOW_HEADERS = [
 
 
 ROOT_URLCONF = 'abbysapi.urls'
-AUTH_EMAIL_VERIFICATION = True
+AUTH_EMAIL_VERIFICATION = False
 
 REST_FRAMEWORK = {
 	'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -151,23 +151,23 @@ WSGI_APPLICATION = 'abbysapi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'abbydb',
-#         'USER': 'root',
-#         'PASSWORD': 'Starten1@',
-#         'HOST': 'localhost',
-#         'PORT': '3306',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'abbydb',
+        'USER': 'root',
+        'PASSWORD': 'Starten1@',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
 
 
 # Password validation
@@ -210,17 +210,26 @@ STATIC_URL = '/static/'
 
 DEFAULT_FROM_EMAIL = "mambo@iqsacco.com"
 
+# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+# EMAIL_FROM = os.environ.get('EMAIL_FROM') 
+# EMAIL_BCC = os.environ.get('EMAIL_BCC')
+
+# EMAIL_HOST = os.environ.get('EMAIL_HOST') 
+# EMAIL_PORT = os.environ.get('EMAIL_PORT') 
+# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') 
+# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+# EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False
+
+
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-
-EMAIL_FROM = os.environ.get('EMAIL_FROM') 
-EMAIL_BCC = os.environ.get('EMAIL_BCC')
-
-EMAIL_HOST = os.environ.get('EMAIL_HOST') 
-EMAIL_PORT = os.environ.get('EMAIL_PORT') 
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') 
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "nmbajah@gmail.com"
+EMAIL_HOST_PASSWORD = 'fwliangggleosuha'
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+
 
 SITE_URL = 'http://localhost:8080/signup/verify/?code='
 
