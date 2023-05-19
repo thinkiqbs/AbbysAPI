@@ -210,11 +210,11 @@ STATIC_URL = '/static/'
 
 # DEFAULT_FROM_EMAIL = "mambo@iqsacco.com"
 
+
+
+EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND') 
+
 DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_FROM')
-
-
-# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-
 EMAIL_FROM = os.environ.get('EMAIL_FROM') 
 EMAIL_BCC = os.environ.get('EMAIL_BCC')
 
